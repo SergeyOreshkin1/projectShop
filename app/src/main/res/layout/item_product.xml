@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/imagePreviewLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="130dp"
+        android:layout_margin="@dimen/normal_100"
+        android:layout_height="164dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagePreview"
+            android:layout_width="131dp"
+            android:layout_height="164dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/iv_bg_item_product"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:shapeAppearanceOverlay="@style/roundedCorners" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="@dimen/tv_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginTop="@dimen/normal_100"
+        android:layout_marginEnd="@dimen/normal_100"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:singleLine="false"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imagePreviewLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
+        tools:text="@string/tools_title" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginEnd="@dimen/normal_100"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@color/text_secondary"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/imagePreviewLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        tools:text="@string/description" />
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagePreviewLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription"
+        app:layout_constraintVertical_bias="0.63"
+        tools:text="@string/price" />
+
+    <Button
+        android:id="@+id/button_buy"
+        style="@style/Button.Catalog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/normal_100"
+        android:drawableLeft="@drawable/ic_buy"
+        android:text="@string/buy"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textPrice"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription"
+        app:layout_constraintVertical_bias="0.636" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

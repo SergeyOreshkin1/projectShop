@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/divider_catalog"
+    tools:context=".activity.profile.ProfileActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_min_height"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F39306"
+            android:backgroundTint="@android:color/holo_orange_light"
+            app:contentInsetStartWithNavigation="0dp"
+            app:navigationIcon="@drawable/ic_profile">
+
+            <TextView
+                android:id="@+id/text_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/profile"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profile_layout"
+                android:layout_width="420dp"
+                android:layout_height="215dp"
+                android:background="@drawable/back"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appbar_layout"
+                tools:ignore="NotSibling">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/iv_profile"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:background="@color/background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.389"
+                    app:shapeAppearanceOverlay="@style/rounded" />
+
+                <ImageView
+                    android:id="@+id/profileAvatarLayout"
+                    android:layout_width="94dp"
+                    android:layout_height="98dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.41" />
+
+                <TextView
+                    android:id="@+id/tvNameProfile"
+                    style="@style/TextAppearance.H2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="28dp"
+                    android:shadowColor="@android:color/black"
+                    android:shadowDx="3"
+                    android:shadowDy="3"
+                    android:shadowRadius="40"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="@string/profile_fio" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_orders"
+                android:layout_width="@dimen/cv_size"
+                android:layout_height="@dimen/cv_size"
+                android:layout_marginStart="@dimen/normal_100"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="@dimen/normal_100"
+                app:layout_constraintEnd_toStartOf="@+id/card_view_settings"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_layout">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="61dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/ic_order" />
+
+                <TextView
+                    android:layout_width="82dp"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="28dp"
+                    android:gravity="center"
+                    android:text="@string/my_orders"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/card_view_text_size" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_shop"
+                android:layout_marginStart="@dimen/normal_100"
+                android:layout_marginTop="40dp"
+                android:layout_width="@dimen/cv_size"
+                android:layout_height="@dimen/cv_size"
+                android:layout_marginBottom="@dimen/normal_100"
+                app:cardCornerRadius="@dimen/normal_100"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/card_view_video"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_orders"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/ic_shop" />
+
+                <TextView
+                    android:layout_width="82dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="28dp"
+                    android:gravity="center"
+                    android:text="@string/shop"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/card_view_text_size" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_settings"
+                android:layout_width="@dimen/cv_size"
+                android:layout_height="@dimen/cv_size"
+                android:layout_marginStart="@dimen/normal_100"
+                android:layout_marginTop="40dp"
+                app:cardCornerRadius="@dimen/normal_100"
+                app:layout_constraintEnd_toStartOf="@+id/card_view_exit"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/card_view_orders"
+                app:layout_constraintTop_toBottomOf="@+id/profile_layout">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="@dimen/normal_200"
+                    android:gravity="center"
+                    android:src="@drawable/ic_settings" />
+
+                <TextView
+                    android:layout_width="84dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="28dp"
+                    android:gravity="center"
+                    android:text="@string/settings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/card_view_text_size" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_exit"
+                android:layout_width="@dimen/cv_size"
+                android:layout_height="@dimen/cv_size"
+                android:layout_marginStart="@dimen/normal_100"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="@dimen/normal_100"
+                android:backgroundTint="@color/status_bar"
+                app:cardCornerRadius="@dimen/normal_100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/card_view_settings"
+                app:layout_constraintTop_toBottomOf="@+id/profile_layout">
+
+                <ImageView
+                    android:layout_width="106dp"
+                    android:layout_height="49dp"
+                    android:layout_marginTop="@dimen/normal_200"
+                    android:layout_marginEnd="7dp"
+                    android:gravity="center"
+                    android:paddingTop="9dp"
+                    android:src="@drawable/ic_exit_1" />
+
+                <TextView
+                    android:layout_width="84dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="28dp"
+                    android:gravity="center"
+                    android:text="@string/exit"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/card_view_text_size" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_video"
+                android:layout_width="@dimen/cv_size"
+                android:layout_height="@dimen/cv_size"
+                app:cardCornerRadius="@dimen/normal_100"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="@dimen/normal_100"
+                android:layout_marginStart="@dimen/normal_100"
+                app:layout_constraintEnd_toStartOf="@id/card_view_video_training"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/card_view_shop"
+                app:layout_constraintTop_toBottomOf="@id/card_view_settings"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/ic_nutrition" />
+
+                <TextView
+                    android:layout_width="82dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="28dp"
+                    android:gravity="center"
+                    android:text="@string/video"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/card_view_text_size" />
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_view_video_training"
+                android:layout_width="@dimen/cv_size"
+                android:layout_height="@dimen/cv_size"
+                app:cardCornerRadius="@dimen/normal_100"
+                android:layout_marginTop="40dp"
+                android:layout_marginBottom="@dimen/normal_100"
+                android:layout_marginStart="@dimen/normal_100"
+                android:layout_marginEnd="@dimen/normal_100"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/card_view_video"
+                app:layout_constraintTop_toBottomOf="@id/card_view_exit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/training" />
+
+                <TextView
+                    android:layout_width="82dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="28dp"
+                    android:gravity="center"
+                    android:text="@string/video_training"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/card_view_text_size" />
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+

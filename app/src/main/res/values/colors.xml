@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="primary">#241773</color>
+    <color name="smalt">#003594</color>
+    <color name="black_20pc">#33000000</color>
+    <color name="white_50pc">#80FFFFFF</color>
+    <color name="control">#F1F1F1</color>
+    <color name="silver_chalice">#ACACAC</color>
+    <color name="snackBarError">#F72400</color>
+    <color name="snackBarSuccess">#8BC34A</color>
+    <color name="background">#F4F4F4</color>
+    <color name="text_secondary">#A4A4A4</color>
+    <color name="status_bar">@android:color/holo_orange_light</color>
+    <color name="cv_exit">#FF5252</color>
+    <color name="error">#ED4337</color>
+    <color name="transparent">#00000000</color>
+    <color name="iv_bg_item_product">#f2f2f2</color>
+</resources>

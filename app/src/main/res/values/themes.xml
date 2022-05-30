@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+
+    <style name="Base.V28.Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:navigationBarColor">@color/black_20pc</item>
+    </style>
+
+    <style name="Theme.GraduationWork" parent="Base.V28.Theme">
+        <item name="android:statusBarColor">@color/black_20pc</item>
+        <item name="colorPrimary">@color/smalt</item>
+        <item name="materialButtonStyle">@style/Theme.FinalQualifyingWork.Button</item>
+        <item name="textInputStyle">@style/Theme.FinalQualifyingWork.TextInputLayout</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="bottomSheetDialogTheme">@style/BottomSheetDialog</item>
+    </style>
+
+    <style name="Theme.GraduationWork.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.GraduationWork.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.GraduationWork.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CircularProgressBar">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/circle_determinate</item>
+    </style>
+
+</resources>

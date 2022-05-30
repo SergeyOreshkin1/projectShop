@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/coordinator"
+    tools:context=".activity.profile.OrdersActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarLayoutOrders"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_min_height"
+        app:elevation="@dimen/no_elevation"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primary"
+            android:backgroundTint="@android:color/holo_orange_light"
+            app:menu="@menu/menu"
+            >
+
+            <TextView
+                android:id="@+id/tv_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_100"
+                android:layout_marginBottom="@dimen/normal_100"
+                android:text="@string/orders"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_appbar_size" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/errorLayout"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/appbar_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvError"
+                style="@style/TextAppearance.H1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/buttonBuy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_100"
+                android:layout_marginEnd="@dimen/normal_100"
+                android:layout_marginTop="@dimen/normal_200"
+                android:text="@string/goToShop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvError" />
+
+            <Button
+                android:id="@+id/buttonRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/normal_100"
+                android:layout_marginEnd="@dimen/normal_100"
+                android:layout_marginTop="@dimen/normal_200"
+                android:text="@string/refresh"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonBuy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintTop_toBottomOf="@id/appbarLayoutOrders">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingBottom="@dimen/app_bar_min_height"
+                tools:itemCount="10"
+                tools:listitem="@layout/item_order" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

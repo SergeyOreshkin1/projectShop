@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/imagePreviewLayout"
+        android:layout_width="130dp"
+        android:layout_height="140dp"
+        android:layout_margin="@dimen/normal_100"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imagePreview"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/iv_bg_item_product"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.593"
+            app:shapeAppearanceOverlay="@style/roundedCorners" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textTitleOrder"
+        android:layout_width="@dimen/tv_title_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginTop="@dimen/normal_100"
+        android:ellipsize="end"
+        android:maxLines="4"
+        android:singleLine="false"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textDescriptionOrder"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imagePreviewLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.026"
+        tools:text="@string/tools_title" />
+
+    <TextView
+        android:id="@+id/textDescriptionOrder"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:maxLines="7"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textDate"
+        app:layout_constraintEnd_toStartOf="@id/buttonDelete"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/imagePreviewLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textTitleOrder"
+        tools:text="description" />
+
+    <TextView
+        android:id="@+id/textDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginEnd="0dp"
+        android:textColor="@color/black"
+        android:maxLines="7"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textAdres"
+        app:layout_constraintStart_toEndOf="@+id/imagePreviewLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textDescriptionOrder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.63"
+        tools:text="20 ноября" />
+
+    <TextView
+        android:id="@+id/textAdres"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        app:layout_goneMarginEnd="@dimen/normal_100"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:ellipsize="end"
+        android:maxLines="7"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/textAmount"
+        app:layout_constraintStart_toEndOf="@+id/imagePreviewLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textDate"
+        app:layout_constraintVertical_bias="0.724"
+        tools:text="адрес" />
+
+    <TextView
+        android:id="@+id/textAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/normal_100"
+        android:layout_marginBottom="@dimen/normal_100"
+        android:textColor="@color/black"
+        android:maxLines="5"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imagePreviewLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textAdres"
+        tools:text="сумма заказа " />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonDelete"
+        style="@style/Button.Catalog"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/textTitleOrder"
+        app:layout_constraintBottom_toTopOf="@+id/textDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/delete" />
+
+    <TextView
+        android:id="@+id/pickup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_100"
+        android:layout_marginStart="4dp"
+        android:text="@string/order_type"
+        android:textColor="#DD0707"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textTitleOrder"
+        app:layout_constraintBottom_toTopOf="@+id/textDescriptionOrder"
+
+         />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
